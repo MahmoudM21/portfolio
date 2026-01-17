@@ -16,9 +16,10 @@ const Resume = () => {
 
   const skills = {
     'Frontend': ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
-    'Backend': ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'Mongoose', 'PostgreSQL'],
+    'Backend': ['Node.js', 'Express.js', 'Python', 'Django', 'REST APIs', 'MongoDB', 'Mongoose', 'PostgreSQL'],
+    'CMS / E-Commerce': ['WordPress', 'Shopify'],
     'AI/ML': ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision', 'TensorFlow', 'PyTorch'],
-    'DevOps': ['Docker', 'CI/CD', 'AWS', 'Git', 'Linux', 'Nginx'],
+    'DevOps': ['Docker', 'CI/CD', 'AWS', 'Hostinger', 'Git', 'Linux', 'Nginx'],
     'Tools': ['Figma', 'VS Code', 'Postman', 'MongoDB Compass', 'Jira', 'Agile/Scrum'],
   }
 

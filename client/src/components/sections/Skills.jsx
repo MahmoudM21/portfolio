@@ -5,7 +5,8 @@ import {
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs, 
   SiExpress, SiMongodb, SiPostgresql, SiDocker, SiKubernetes,
   SiAmazonwebservices, SiGooglecloud, SiPython, SiTensorflow, 
-  SiOpenai, SiGit, SiRedis, SiGraphql, SiFigma, SiVercel
+  SiOpenai, SiGit, SiRedis, SiGraphql, SiFigma, SiVercel,
+  SiWordpress, SiDjango, SiShopify
 } from 'react-icons/si'
 
 const skillCategories = [
@@ -26,6 +27,7 @@ const skillCategories = [
       { name: 'Node.js', icon: SiNodedotjs, level: 93 },
       { name: 'Express', icon: SiExpress, level: 90 },
       { name: 'Python', icon: SiPython, level: 85 },
+      { name: 'Django', icon: SiDjango, level: 88 },
       { name: 'GraphQL', icon: SiGraphql, level: 82 },
     ],
   },
@@ -46,6 +48,7 @@ const skillCategories = [
       { name: 'Kubernetes', icon: SiKubernetes, level: 75 },
       { name: 'AWS', icon: SiAmazonwebservices, level: 82 },
       { name: 'GCP', icon: SiGooglecloud, level: 78 },
+      { name: 'Hostinger', icon: SiAmazonwebservices, level: 85 },
     ],
   },
   {
@@ -54,6 +57,14 @@ const skillCategories = [
     skills: [
       { name: 'TensorFlow', icon: SiTensorflow, level: 75 },
       { name: 'OpenAI', icon: SiOpenai, level: 85 },
+    ],
+  },
+  {
+    title: 'CMS / E-Commerce',
+    color: 'from-blue-500 to-indigo-600',
+    skills: [
+      { name: 'WordPress', icon: SiWordpress, level: 90 },
+      { name: 'Shopify', icon: SiShopify, level: 85 },
     ],
   },
   {

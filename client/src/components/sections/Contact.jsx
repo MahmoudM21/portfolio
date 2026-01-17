@@ -62,12 +62,12 @@ const Contact = () => {
   }
 
   const contactInfo = {
-    phone: '+20 150 8318032',
-    phoneClean: '+201508318032',
+    phone: '+20 105 5210373',
+    phoneClean: '+20 105 5210373',
     whatsapp: '201508318032', // WhatsApp number without + for wa.me link
     linkedin: 'https://www.linkedin.com/in/mahmoud-bmawy-%F0%9F%98%8E-379268262/',
     instagram: 'https://www.instagram.com/mahmoud.hmaad1_bmawy/',
-    email: 'contact@mahmoudbmawy.com',
+    email: 'mahmoudhmad411@gmail.com',
     location: 'Egypt (Open to Remote)',
   }
 

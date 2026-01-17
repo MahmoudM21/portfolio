@@ -104,6 +104,56 @@ const fallbackProjects = [
     },
     outcome: 'DeepClone provided deep hands-on experience in building AI systems from the ground up, from model architecture to audio processing pipelines. The project reinforced the importance of understanding underlying technologies rather than relying solely on pre-built solutions.',
   },
+  {
+    _id: '5',
+    slug: 'el-safa-trading',
+    title: 'El Safa Trading',
+    description: 'WordPress business website for an established Egyptian company specializing in photocopier and printer supplies.',
+    longDescription: `El Safa Trading is an established Egyptian company specializing in photocopier and printer supplies, including inks, toners, cartridges, and spare parts. The website was built to present the company's catalog, strengthen its digital presence, and support customer inquiries.`,
+    techStack: ['WordPress', 'WooCommerce', 'Hosting', 'SEO Optimization'],
+    image: '/images/projects/el-safa-trading.jpg',
+    images: [], // Will be auto-discovered from folder
+    featured: false,
+    category: 'Full-Stack',
+    type: 'Web App',
+    liveUrl: 'https://elsafa-egypt.com/',
+    caseStudy: {
+      problem: 'El Safa Trading needed a professional digital presence to showcase their product catalog and support customer inquiries in the competitive office supplies market.',
+      solution: 'A custom WordPress website was designed and developed with structured product categories, optimized performance, and SEO to strengthen the company\'s digital presence and support business growth.',
+      highlights: [
+        'Full website design and development using WordPress',
+        'Structured product categories and content for clarity',
+        'Optimized performance and SEO for business visibility',
+        'Responsive design across all devices',
+      ],
+    },
+    outcome: 'El Safa Trading now has a professional digital presence that effectively presents their catalog and supports customer inquiries. The website strengthens the company\'s market position and provides a solid foundation for future growth.',
+  },
+  {
+    _id: '6',
+    slug: 'taj-restaurant',
+    title: 'Taj Restaurant',
+    description: 'WordPress restaurant website showcasing brand, menu offerings, and contact information in a clean and modern digital experience.',
+    longDescription: `Taj Restaurant is a restaurant located in Nasr City. The website was built to showcase the brand, menu offerings, and contact information in a clean and modern digital experience.`,
+    techStack: ['WordPress', 'UI/UX Design', 'Hosting'],
+    image: '/images/projects/taj-restaurant.jpg',
+    images: [], // Will be auto-discovered from folder
+    featured: false,
+    category: 'Full-Stack',
+    type: 'Web App',
+    liveUrl: 'https://taj.restaurant.greennovas.com/',
+    caseStudy: {
+      problem: 'Taj Restaurant needed a modern digital presence to showcase their brand and menu offerings, making it easy for customers to discover and contact the restaurant.',
+      solution: 'A custom WordPress restaurant website was built with structured menu content, mobile-first responsive design, and optimized user experience to effectively showcase the brand and support customer engagement.',
+      highlights: [
+        'Custom restaurant website using WordPress',
+        'Structured menu and content for easy navigation',
+        'Mobile-first responsive design',
+        'Fast loading and optimized user experience',
+      ],
+    },
+    outcome: 'Taj Restaurant now has a professional website that effectively showcases their brand and menu offerings. The clean, modern design provides an excellent user experience and supports customer engagement.',
+  },
 ]
 
 const categories = ['All', 'Full-Stack', 'Desktop', 'AI']
