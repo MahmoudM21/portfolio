@@ -122,7 +122,7 @@ const fallbackProjects = [
     description: 'WordPress business website for an established Egyptian company specializing in photocopier and printer supplies.',
     longDescription: `El Safa Trading is an established Egyptian company specializing in photocopier and printer supplies, including inks, toners, cartridges, and spare parts. The website was built to present the company's catalog, strengthen its digital presence, and support customer inquiries.`,
     techStack: ['WordPress', 'WooCommerce', 'Hosting', 'SEO Optimization'],
-    image: '/images/projects/el-safa-trading.jpg',
+    image: '/images/projects/ElSafa/elsafa.png',
     images: [], // Will be auto-discovered from folder
     featured: false,
     category: 'Full-Stack',
@@ -148,7 +148,7 @@ const fallbackProjects = [
     description: 'WordPress restaurant website showcasing brand, menu offerings, and contact information in a clean and modern digital experience.',
     longDescription: `Taj Restaurant is a restaurant located in Nasr City. The website was built to showcase the brand, menu offerings, and contact information in a clean and modern digital experience.`,
     techStack: ['WordPress', 'UI/UX Design', 'Hosting'],
-    image: '/images/projects/taj-restaurant.jpg',
+    image: '/images/projects/Taj/taj-h.png',
     images: [], // Will be auto-discovered from folder
     featured: false,
     category: 'Full-Stack',
