@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import path from 'path'
 
 // Import routes
 import projectRoutes from './routes/projectRoutes.js'
@@ -17,14 +18,14 @@ dotenv.config()
 
 // Initialize Express app
 const app = express()
-
+const __dirname = path.resolve()
 // ======================
 // MIDDLEWARE
 // ======================
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: process.env.CLIENT_URL || '*',
   credentials: true,
 }))
 
@@ -60,6 +61,16 @@ app.use('/api/events', eventRoutes)
 app.use('/api/images', imageRoutes)
 
 // ======================
+// SERVE REACT (IMPORTANT)
+// ======================
+
+app.use(express.static(path.join(__dirname, '../client/dist')))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+})
+
+// ======================
 // ERROR HANDLING
 // ======================
 
@@ -70,19 +81,21 @@ app.use(errorHandler)
 // DATABASE & SERVER
 // ======================
 
-const PORT = process.env.PORT || 5000
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/portfolio'
+const PORT = process.env.PORT || 3000
+const MONGO_URI = process.env.MONGO_URI 
 
 // Connect to MongoDB
 const connectDB = async () => {
+  if (!MONGO_URI) {
+    console.log('⚠ No MONGO_URI provided – skipping DB connection')
+    return
+  }
+
   try {
-    const conn = await mongoose.connect(MONGO_URI, {
-      // Modern Mongoose doesn't need these options anymore
-    })
+    const conn = await mongoose.connect(MONGO_URI)
     console.log(`✓ MongoDB Connected: ${conn.connection.host}`)
   } catch (error) {
     console.error(`✗ MongoDB Error: ${error.message}`)
-    // Don't exit - allow server to run without DB for demo purposes
     console.log('⚠ Server will continue without database connection')
   }
 }
