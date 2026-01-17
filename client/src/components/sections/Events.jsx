@@ -192,7 +192,7 @@ const EventCard = ({ event, index }) => {
     >
       <div className="glass-card overflow-hidden h-full flex flex-col">
         {/* Image */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-40 sm:h-48 overflow-hidden">
           <img
             src={event.image}
             alt={event.title}
@@ -231,26 +231,26 @@ const EventCard = ({ event, index }) => {
         </div>
 
         {/* Content */}
-        <div className="p-6 flex-1 flex flex-col">
-          <h3 className="font-display text-xl font-semibold text-white mb-2 group-hover:text-cyan transition-colors line-clamp-2">
+        <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col">
+          <h3 className="font-display text-base sm:text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-cyan transition-colors line-clamp-2">
             {event.title}
           </h3>
           
-          <p className="text-cyan text-sm font-medium mb-3">{event.role}</p>
+          <p className="text-cyan text-xs sm:text-sm font-medium mb-2 sm:mb-3">{event.role}</p>
           
-          <p className="text-text-secondary text-sm mb-4 line-clamp-2 flex-1">
+          <p className="text-text-secondary text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 flex-1">
             {event.description}
           </p>
 
           {/* Meta info */}
-          <div className="flex flex-wrap gap-3 text-text-muted text-xs mb-4">
+          <div className="flex flex-wrap gap-2 sm:gap-3 text-text-muted text-[10px] sm:text-xs mb-3 sm:mb-4">
             <span className="flex items-center gap-1">
-              <FiMapPin className="w-3.5 h-3.5" />
-              {event.location}
+              <FiMapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              <span className="truncate">{event.location}</span>
             </span>
             {event.teamSize && (
               <span className="flex items-center gap-1">
-                <FiUsers className="w-3.5 h-3.5" />
+                <FiUsers className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 Team of {event.teamSize}
               </span>
             )}
@@ -258,17 +258,17 @@ const EventCard = ({ event, index }) => {
 
           {/* Tech stack preview */}
           {event.techStack && event.techStack.length > 0 && (
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1 sm:gap-1.5">
               {event.techStack.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-0.5 text-xs font-mono bg-surface rounded text-text-muted"
+                  className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-mono bg-surface rounded text-text-muted"
                 >
                   {tech}
                 </span>
               ))}
               {event.techStack.length > 3 && (
-                <span className="px-2 py-0.5 text-xs font-mono text-text-muted">
+                <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-mono text-text-muted">
                   +{event.techStack.length - 3}
                 </span>
               )}
@@ -323,7 +323,7 @@ const Events = () => {
       <div className="aurora-bg opacity-20" />
       <div className="grid-lines opacity-20" />
 
-      <div ref={ref} className="container mx-auto px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -334,11 +334,11 @@ const Events = () => {
           <span className="inline-block font-mono text-cyan text-sm tracking-wider mb-4">
             // EXPERIENCES
           </span>
-          <h2 className="font-display text-display-lg font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-bold mb-4">
             Events, Hackathons &{' '}
             <span className="gradient-text">Industry Participation</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4 sm:px-0">
             Active participation in the tech ecosystem—from competitive hackathons 
             to mentoring and knowledge sharing at regional summits.
           </p>
@@ -367,7 +367,7 @@ const Events = () => {
         </motion.div>
 
         {/* Events grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {events.map((event, index) => (
             <EventCard
               key={event._id}

@@ -206,13 +206,15 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' })
+      const scrollAmount = window.innerWidth < 640 ? -280 : window.innerWidth < 1024 ? -400 : -500
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
     }
   }
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' })
+      const scrollAmount = window.innerWidth < 640 ? 280 : window.innerWidth < 1024 ? 400 : 500
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
     }
   }
 
@@ -284,18 +286,18 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
             <>
               <button
                 onClick={scrollLeft}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-void/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-void hover:border-cyan/30"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-void/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-void hover:border-cyan/30 min-h-[44px]"
                 aria-label="Scroll left"
               >
-                <FiChevronLeft className="w-6 h-6" />
+                <FiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               
               <button
                 onClick={scrollRight}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-void/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-void hover:border-cyan/30"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-void/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-void hover:border-cyan/30 min-h-[44px]"
                 aria-label="Scroll right"
               >
-                <FiChevronRight className="w-6 h-6" />
+                <FiChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </>
           )}
@@ -303,7 +305,7 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
           {/* Scrollable container */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4"
+            className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -315,7 +317,7 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="relative shrink-0 w-[600px] h-[400px] rounded-2xl overflow-hidden group/item cursor-pointer snap-start"
+                className="relative shrink-0 w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden group/item cursor-pointer snap-start"
                 onClick={() => openLightbox(index)}
               >
                 <img
@@ -368,10 +370,10 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
             {/* Close button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-surface-light transition-colors z-10"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-surface-light transition-colors z-10 min-h-[44px]"
               aria-label="Close"
             >
-              <FiX className="w-6 h-6" />
+              <FiX className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Navigation buttons */}
@@ -382,20 +384,20 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
                     e.stopPropagation()
                     prevImage()
                   }}
-                  className="absolute left-4 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-surface-light transition-colors z-10"
+                  className="absolute left-3 sm:left-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-surface-light transition-colors z-10 min-h-[44px]"
                   aria-label="Previous image"
                 >
-                  <FiChevronLeft className="w-6 h-6" />
+                  <FiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
                 <button
                   onClick={(e) => {
                     e.stopPropagation()
                     nextImage()
                   }}
-                  className="absolute right-4 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-surface-light transition-colors z-10"
+                  className="absolute right-3 sm:right-4 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-white hover:bg-surface-light transition-colors z-10 min-h-[44px]"
                   aria-label="Next image"
                 >
-                  <FiChevronRight className="w-6 h-6" />
+                  <FiChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
               </>
             )}
@@ -407,7 +409,7 @@ const ImageGallery = ({ images, title = 'Gallery', folderPath = null }) => {
               exit={{ scale: 0.9, opacity: 0 }}
               src={selectedImage}
               alt={`${title} - Full view`}
-              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+              className="max-w-[95vw] sm:max-w-[90vw] max-h-[85vh] sm:max-h-[90vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
               onError={(e) => {
                 console.error('Failed to load image in lightbox:', selectedImage)

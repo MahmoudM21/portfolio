@@ -130,7 +130,7 @@ const fallbackProjects = [
     liveUrl: 'https://elsafa-egypt.com/',
     caseStudy: {
       problem: 'El Safa Trading needed a professional digital presence to showcase their product catalog and support customer inquiries in the competitive office supplies market.',
-      solution: 'A custom WordPress website was designed and developed with structured product categories, optimized performance, and SEO to strengthen the company\'s digital presence and support business growth.',
+      solution: 'A custom WordPress website was designed and developed with structured product categories, optimized performance, and SEO to strengthen the company&apos;s digital presence and support business growth.',
       highlights: [
         'Full website design and development using WordPress',
         'Structured product categories and content for clarity',
@@ -232,7 +232,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen flex items-center justify-center bg-void" style={{ backgroundColor: '#050505' }}>
         <div className="text-center">
           <h2 className="text-white text-2xl mb-4">Project not found</h2>
-          <p className="text-text-secondary mb-6">The project "{slug}" could not be found.</p>
+          <p className="text-text-secondary mb-6">The project &quot;{slug}&quot; could not be found.</p>
           <button
             onClick={() => navigate('/')}
             className="px-6 py-3 bg-cyan text-void rounded-lg font-medium hover:bg-cyan/80 transition-colors"
@@ -271,7 +271,7 @@ const ProjectDetail = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={heroInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="relative z-10 container mx-auto px-6 text-center"
+          className="relative z-10 container mx-auto px-4 sm:px-6 text-center"
         >
           {/* Back button */}
           <MagneticWrapper strength={0.2}>
@@ -300,7 +300,7 @@ const ProjectDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-display text-display-xl font-bold mb-6 text-white"
+            className="font-display text-3xl sm:text-4xl md:text-display-xl font-bold mb-4 sm:mb-6 text-white px-4 sm:px-0"
           >
             {project.title}
           </motion.h1>
@@ -310,7 +310,7 @@ const ProjectDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-text-secondary max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-text-secondary max-w-2xl mx-auto px-4 sm:px-0"
           >
             {project.tagline}
           </motion.p>
@@ -318,7 +318,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         {/* Overview */}
         <motion.section
           ref={overviewRef}
@@ -327,11 +327,11 @@ const ProjectDetail = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <h2 className="font-display text-display-md font-bold text-white mb-6 flex items-center gap-3">
-            <FiLayers className="text-cyan" />
+          <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+            <FiLayers className="text-cyan w-5 h-5 sm:w-6 sm:h-6" />
             Overview
           </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
             {project.longDescription}
           </p>
         </motion.section>
@@ -345,10 +345,10 @@ const ProjectDetail = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="font-display text-display-md font-bold text-white mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8">
               Problem & Solution
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div className="p-6 rounded-xl bg-red-500/5 border border-red-500/20">
                 <h3 className="font-display font-semibold text-white mb-4 flex items-center gap-2">
                   <FiShield className="text-red-400" /> The Problem
@@ -377,10 +377,10 @@ const ProjectDetail = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="font-display text-display-md font-bold text-white mb-8 flex items-center gap-3">
-              <FiTarget className="text-cyan" /> Key Features
+            <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+              <FiTarget className="text-cyan w-5 h-5 sm:w-6 sm:h-6" /> Key Features
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
               {project.caseStudy.highlights.map((highlight, i) => (
                 <motion.div
                   key={i}
@@ -404,15 +404,15 @@ const ProjectDetail = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <h2 className="font-display text-display-md font-bold text-white mb-8 flex items-center gap-3">
-            <FiCode className="text-cyan" /> Technologies Used
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="px-4 py-2 text-sm font-mono bg-surface rounded-lg text-white border border-white/5"
-              >
+            <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+              <FiCode className="text-cyan w-5 h-5 sm:w-6 sm:h-6" /> Technologies Used
+            </h2>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {project.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-mono bg-surface rounded-lg text-white border border-white/5"
+                >
                 {tech}
               </span>
             ))}
@@ -432,7 +432,7 @@ const ProjectDetail = () => {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-cyan/10 border border-cyan/30 text-cyan font-medium hover:bg-cyan/20 transition-all group"
+                className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-cyan/10 border border-cyan/30 text-cyan text-sm sm:text-base font-medium hover:bg-cyan/20 transition-all group min-h-[48px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -451,7 +451,7 @@ const ProjectDetail = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="max-w-6xl mx-auto mb-20"
         >
-          <h2 className="font-display text-display-md font-bold text-white mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8">
             Project Gallery
           </h2>
           <ImageGallery 
@@ -468,10 +468,10 @@ const ProjectDetail = () => {
                 'creative-os': 'Creative-OS',
                 'DeepClone': 'DeepClone',
                 'deepclone': 'DeepClone',
-                'El Safa Trading': 'El-Safa-Trading',
-                'el-safa-trading': 'El-Safa-Trading',
-                'Taj Restaurant': 'Taj-Restaurant',
-                'taj-restaurant': 'Taj-Restaurant'
+                'El Safa Trading': 'ElSafa',
+                'el-safa-trading': 'ElSafa',
+                'Taj Restaurant': 'Taj',
+                'taj-restaurant': 'Taj'
               }
               const folder = folderMap[project.title] || folderMap[project.slug] || project.slug
               const path = `/images/projects/${folder}`
@@ -489,11 +489,11 @@ const ProjectDetail = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="font-display text-display-md font-bold text-white mb-6">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-4 sm:mb-6">
               Outcome & Experience
             </h2>
-            <div className="p-8 rounded-xl bg-surface/50 border border-white/5">
-              <p className="text-lg text-text-secondary leading-relaxed">
+            <div className="p-4 sm:p-6 md:p-8 rounded-xl bg-surface/50 border border-white/5">
+              <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
                 {project.outcome}
               </p>
             </div>

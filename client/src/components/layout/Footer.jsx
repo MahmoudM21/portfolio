@@ -50,7 +50,7 @@ const Footer = () => {
       {/* Grid lines */}
       <div className="grid-lines opacity-30" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Top section with CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -58,11 +58,11 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-display-md font-bold mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold mb-4">
             Let&apos;s Build Something{' '}
             <span className="gradient-text">Extraordinary</span>
           </h2>
-          <p className="text-text-secondary max-w-xl mx-auto mb-8">
+          <p className="text-sm sm:text-base text-text-secondary max-w-xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0">
             Ready to bring your vision to life? I&apos;m always excited to work on 
             innovative projects that challenge the status quo.
           </p>
@@ -87,7 +87,7 @@ const Footer = () => {
         />
 
         {/* Bottom section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Logo & Copyright */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -117,7 +117,7 @@ const Footer = () => {
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className={`group relative w-12 h-12 flex items-center justify-center rounded-full border border-white/10 text-text-secondary transition-all duration-300 ${social.color}`}
+                  className={`group relative w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full border border-white/10 text-text-secondary transition-all duration-300 min-h-[44px] ${social.color}`}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, scale: 0.5 }}

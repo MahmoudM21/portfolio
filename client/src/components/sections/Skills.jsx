@@ -90,16 +90,16 @@ const SkillCard = ({ skill, index, categoryColor }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass-card p-4 group"
+      className="glass-card p-3 sm:p-4 group"
     >
-      <div className="flex items-center gap-4 mb-3">
-        <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${categoryColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-          <skill.icon className="w-5 h-5 text-white" />
+      <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
+        <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${categoryColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
+          <skill.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </div>
-        <div className="flex-1">
-          <h4 className="font-medium text-white">{skill.name}</h4>
+        <div className="flex-1 min-w-0">
+          <h4 className="font-medium text-sm sm:text-base text-white truncate">{skill.name}</h4>
         </div>
-        <span className="font-mono text-sm text-text-muted">{skill.level}%</span>
+        <span className="font-mono text-xs sm:text-sm text-text-muted shrink-0">{skill.level}%</span>
       </div>
       
       {/* Progress bar */}
@@ -145,7 +145,7 @@ const Skills = () => {
         className="absolute top-1/3 -left-32 w-96 h-96 rounded-full bg-gradient-to-br from-violet/10 to-cyan/10 blur-3xl"
       />
 
-      <div ref={ref} className="container mx-auto px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -156,17 +156,17 @@ const Skills = () => {
           <span className="inline-block font-mono text-cyan text-sm tracking-wider mb-4">
             // SKILLS & EXPERTISE
           </span>
-          <h2 className="font-display text-display-lg font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-bold mb-4">
             My <span className="gradient-text">Tech Stack</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4 sm:px-0">
             A comprehensive toolkit built over years of solving complex problems 
             and shipping production-grade applications.
           </p>
         </motion.div>
 
         {/* Skills grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
@@ -175,9 +175,9 @@ const Skills = () => {
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
             >
               {/* Category header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-2 h-8 rounded-full bg-gradient-to-b ${category.color}`} />
-                <h3 className="font-display font-semibold text-xl text-white">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className={`w-1.5 sm:w-2 h-6 sm:h-8 rounded-full bg-gradient-to-b ${category.color}`} />
+                <h3 className="font-display font-semibold text-lg sm:text-xl text-white">
                   {category.title}
                 </h3>
               </div>

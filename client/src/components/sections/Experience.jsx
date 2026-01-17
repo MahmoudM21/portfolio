@@ -106,7 +106,7 @@ const ExperienceCard = ({ experience, index, isLeft }) => {
       </div>
 
       {/* Card */}
-      <div className={`glass-card p-6 md:p-8 w-full md:max-w-lg group ${
+      <div className={`glass-card p-4 sm:p-6 md:p-8 w-full md:max-w-lg group ${
         isCurrent ? 'border-cyan/20' : ''
       }`}>
         {/* Current badge */}
@@ -122,11 +122,11 @@ const ExperienceCard = ({ experience, index, isLeft }) => {
 
         {/* Header */}
         <div className="mb-4">
-          <h3 className="font-display text-xl font-semibold text-white group-hover:text-cyan transition-colors">
+          <h3 className="font-display text-lg sm:text-xl font-semibold text-white group-hover:text-cyan transition-colors">
             {experience.role}
           </h3>
-          <p className="text-cyan font-medium">{experience.company}</p>
-          <div className="flex flex-wrap gap-4 mt-2 text-sm text-text-muted">
+          <p className="text-cyan text-sm sm:text-base font-medium">{experience.company}</p>
+          <div className="flex flex-wrap gap-3 sm:gap-4 mt-2 text-xs sm:text-sm text-text-muted">
             <span className="flex items-center gap-1">
               <FiCalendar className="w-4 h-4" />
               {experience.period}
@@ -139,14 +139,14 @@ const ExperienceCard = ({ experience, index, isLeft }) => {
         </div>
 
         {/* Description */}
-        <p className="text-text-secondary mb-4 text-sm leading-relaxed">
+        <p className="text-text-secondary mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed">
           {experience.description}
         </p>
 
         {/* Achievements */}
-        <ul className="space-y-2 mb-6">
+        <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
           {experience.achievements.map((achievement, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
+            <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-text-secondary">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan mt-2 shrink-0" />
               {achievement}
             </li>
@@ -193,7 +193,7 @@ const Experience = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-void-light via-void to-void-light" />
       <div className="grid-lines opacity-20" />
 
-      <div ref={ref} className="container mx-auto px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -204,10 +204,10 @@ const Experience = () => {
           <span className="inline-block font-mono text-cyan text-sm tracking-wider mb-4">
             // CAREER JOURNEY
           </span>
-          <h2 className="font-display text-display-lg font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-bold mb-4">
             Professional <span className="gradient-text">Experience</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4 sm:px-0">
             From writing my first lines of code to architecting enterprise systems — 
             every step has been about continuous learning and delivering value.
           </p>
@@ -224,7 +224,7 @@ const Experience = () => {
           </div>
 
           {/* Mobile line */}
-          <div className="md:hidden absolute left-4 top-0 bottom-0 w-px bg-surface">
+          <div className="md:hidden absolute left-3 sm:left-4 top-0 bottom-0 w-px bg-surface">
             <motion.div
               style={{ height: lineHeight }}
               className="w-full bg-gradient-to-b from-cyan to-violet"
@@ -234,9 +234,9 @@ const Experience = () => {
           {/* Experience cards */}
           <div className="space-y-12 md:space-y-0">
             {experiences.map((experience, index) => (
-              <div key={experience.id} className="relative pl-12 md:pl-0 mb-12 md:mb-16">
+              <div key={experience.id} className="relative pl-10 sm:pl-12 md:pl-0 mb-8 sm:mb-12 md:mb-16">
                 {/* Mobile dot */}
-                <div className={`md:hidden absolute left-4 top-8 -translate-x-1/2 w-3 h-3 rounded-full z-10 ${
+                <div className={`md:hidden absolute left-3 sm:left-4 top-8 -translate-x-1/2 w-3 h-3 rounded-full z-10 ${
                   experience.type === 'current' ? 'bg-cyan' : 'bg-surface-light border-2 border-cyan/50'
                 }`}>
                   {experience.type === 'current' && (

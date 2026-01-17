@@ -43,7 +43,7 @@ const Resume = () => {
 
   return (
     <SectionWrapper id="resume" className="relative py-32">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -65,7 +65,7 @@ const Resume = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-display-lg font-bold text-white mb-6"
+              className="font-display text-3xl sm:text-4xl md:text-display-lg font-bold text-white mb-4 sm:mb-6"
             >
               Curriculum Vitae
             </motion.h2>
@@ -73,7 +73,7 @@ const Resume = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg text-text-secondary max-w-2xl mx-auto"
+              className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4 sm:px-0"
             >
               Full-Stack Engineer specializing in AI, backend systems, and product development
             </motion.p>
@@ -87,12 +87,12 @@ const Resume = () => {
             className="flex justify-center mb-16"
           >
             <MagneticWrapper strength={0.3}>
-              <motion.button
-                onClick={handleDownloadCV}
-                className="group relative px-8 py-4 rounded-xl bg-cyan/10 border border-cyan/30 backdrop-blur-sm text-white font-medium overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+            <motion.button
+              onClick={handleDownloadCV}
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-cyan/10 border border-cyan/30 backdrop-blur-sm text-white text-sm sm:text-base font-medium overflow-hidden min-h-[48px]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative flex items-center gap-3">
                   <FiDownload className="w-5 h-5 text-cyan" />
@@ -103,19 +103,19 @@ const Resume = () => {
           </motion.div>
 
           {/* CV Preview Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="glass-card p-8 md:p-12 mb-12"
-          >
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="glass-card p-4 sm:p-6 md:p-8 lg:p-12 mb-8 sm:mb-12"
+            >
             {/* Professional Summary */}
             <div className="mb-10">
-              <h3 className="font-display text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <FiBriefcase className="text-cyan" />
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                <FiBriefcase className="text-cyan w-5 h-5 sm:w-6 sm:h-6" />
                 Professional Summary
               </h3>
-              <p className="text-text-secondary leading-relaxed text-lg">
+              <p className="text-text-secondary leading-relaxed text-sm sm:text-base md:text-lg">
                 Full-Stack Software Engineer with a strong focus on backend architecture, AI/ML systems, 
                 and scalable product development. Experienced in building production-ready applications 
                 from concept to deployment, with a proven track record in startup environments and 
@@ -126,27 +126,27 @@ const Resume = () => {
 
             {/* Key Skills */}
             <div className="mb-10">
-              <h3 className="font-display text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <FiCode className="text-cyan" />
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                <FiCode className="text-cyan w-5 h-5 sm:w-6 sm:h-6" />
                 Technical Skills
               </h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {Object.entries(skills).map(([category, items], idx) => (
                   <motion.div
                     key={category}
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.6 + idx * 0.1 }}
-                    className="p-4 rounded-xl bg-surface/50 border border-white/5"
+                    className="p-3 sm:p-4 rounded-xl bg-surface/50 border border-white/5"
                   >
-                    <h4 className="font-semibold text-white mb-3 text-sm uppercase tracking-wider">
+                    <h4 className="font-semibold text-white mb-2 sm:mb-3 text-xs sm:text-sm uppercase tracking-wider">
                       {category}
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {items.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 text-xs font-mono bg-void rounded text-text-muted border border-white/5"
+                          className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-mono bg-void rounded text-text-muted border border-white/5"
                         >
                           {skill}
                         </span>
@@ -159,11 +159,11 @@ const Resume = () => {
 
             {/* Selected Projects */}
             <div className="mb-10">
-              <h3 className="font-display text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <FiZap className="text-cyan" />
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                <FiZap className="text-cyan w-5 h-5 sm:w-6 sm:h-6" />
                 Selected Projects
               </h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                 {selectedProjects.map((project, idx) => (
                   <motion.div
                     key={project.slug}
@@ -173,11 +173,11 @@ const Resume = () => {
                   >
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="block p-4 rounded-xl bg-surface/50 border border-white/5 hover:border-cyan/30 transition-all group"
+                      className="block p-3 sm:p-4 rounded-xl bg-surface/50 border border-white/5 hover:border-cyan/30 transition-all group min-h-[60px]"
                     >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-white mb-1 group-hover:text-cyan transition-colors">
+                      <div className="flex items-start justify-between gap-3 sm:gap-4">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-sm sm:text-base text-white mb-1 group-hover:text-cyan transition-colors truncate">
                             {project.title}
                           </h4>
                           <p className="text-xs text-text-muted">{project.category}</p>
@@ -192,23 +192,23 @@ const Resume = () => {
 
             {/* Events & Hackathons */}
             <div className="mb-10">
-              <h3 className="font-display text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <FiAward className="text-cyan" />
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                <FiAward className="text-cyan w-5 h-5 sm:w-6 sm:h-6" />
                 Events & Hackathons
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {events.map((event, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.8 + idx * 0.1 }}
-                    className="p-4 rounded-xl bg-surface/50 border border-white/5"
+                    className="p-3 sm:p-4 rounded-xl bg-surface/50 border border-white/5"
                   >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-white mb-1">{event.title}</h4>
-                        <p className="text-sm text-text-secondary">{event.role}</p>
+                    <div className="flex items-start justify-between gap-3 sm:gap-4">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-sm sm:text-base text-white mb-1">{event.title}</h4>
+                        <p className="text-xs sm:text-sm text-text-secondary">{event.role}</p>
                         {event.achievement && (
                           <p className="text-xs text-cyan mt-1">{event.achievement}</p>
                         )}
@@ -221,18 +221,18 @@ const Resume = () => {
 
             {/* Education */}
             <div>
-              <h3 className="font-display text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <FiBook className="text-cyan" />
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                <FiBook className="text-cyan w-5 h-5 sm:w-6 sm:h-6" />
                 Education
               </h3>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 1.0 }}
-                className="p-4 rounded-xl bg-surface/50 border border-white/5"
+                className="p-3 sm:p-4 rounded-xl bg-surface/50 border border-white/5"
               >
-                <h4 className="font-semibold text-white mb-1">Computer Science / Software Engineering</h4>
-                <p className="text-sm text-text-secondary">
+                <h4 className="font-semibold text-sm sm:text-base text-white mb-1">Computer Science / Software Engineering</h4>
+                <p className="text-xs sm:text-sm text-text-secondary">
                   Focus on Full-Stack Development, AI/ML, and System Design
                 </p>
               </motion.div>

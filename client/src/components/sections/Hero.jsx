@@ -74,13 +74,13 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-text-secondary text-lg mb-4 font-mono"
+          className="text-text-secondary text-base sm:text-lg mb-3 sm:mb-4 font-mono"
         >
           Hi, I&apos;m
         </motion.p>
 
         {/* Main headline */}
-        <h1 className="font-display text-display-xl font-bold mb-6">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-display-xl font-bold mb-4 sm:mb-6">
           <AnimatedWords
             text="Mahmoud Hammad"
             className="block text-white"
@@ -93,7 +93,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-cyan text-xl font-medium mb-6"
+          className="text-cyan text-lg sm:text-xl font-medium mb-4 sm:mb-6"
         >
           😎 BMawy 😎
         </motion.p>
@@ -111,7 +111,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -40, opacity: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="font-display text-2xl md:text-3xl font-semibold gradient-text"
+            className="font-display text-xl sm:text-2xl md:text-3xl font-semibold gradient-text"
           >
             {roles[currentRole]}
           </motion.div>
@@ -122,7 +122,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="max-w-2xl mx-auto text-lg text-text-secondary mb-12 leading-relaxed"
+          className="max-w-2xl mx-auto text-base sm:text-lg text-text-secondary mb-8 sm:mb-12 leading-relaxed px-4 sm:px-0"
         >
           I build <span className="text-white">scalable systems</span>, craft{' '}
           <span className="text-white">elegant backends</span>, and turn complex problems 
@@ -135,7 +135,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0"
         >
           <MagneticWrapper strength={0.2}>
             <motion.a
@@ -208,10 +208,10 @@ const Hero = () => {
       </motion.div>
 
       {/* Corner decorations */}
-      <div className="absolute top-20 left-10 w-20 h-20 border-l-2 border-t-2 border-white/5" />
-      <div className="absolute top-20 right-10 w-20 h-20 border-r-2 border-t-2 border-white/5" />
-      <div className="absolute bottom-20 left-10 w-20 h-20 border-l-2 border-b-2 border-white/5" />
-      <div className="absolute bottom-20 right-10 w-20 h-20 border-r-2 border-b-2 border-white/5" />
+      <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 border-l-2 border-t-2 border-white/5" />
+      <div className="hidden sm:block absolute top-20 right-10 w-20 h-20 border-r-2 border-t-2 border-white/5" />
+      <div className="hidden sm:block absolute bottom-20 left-10 w-20 h-20 border-l-2 border-b-2 border-white/5" />
+      <div className="hidden sm:block absolute bottom-20 right-10 w-20 h-20 border-r-2 border-b-2 border-white/5" />
     </section>
   )
 }

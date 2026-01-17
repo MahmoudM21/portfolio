@@ -251,17 +251,18 @@ const EventDetail = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={heroInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="relative z-10 container mx-auto px-6 text-center"
+          className="relative z-10 container mx-auto px-4 sm:px-6 text-center"
         >
           {/* Back button */}
           <MagneticWrapper strength={0.2}>
             <motion.button
               onClick={() => navigate('/')}
-              className="absolute top-0 left-6 flex items-center gap-2 text-text-secondary hover:text-white transition-colors mb-8"
+              className="absolute top-0 left-4 sm:left-6 flex items-center gap-2 text-text-secondary hover:text-white transition-colors mb-8 text-sm sm:text-base min-h-[44px]"
               whileHover={{ x: -5 }}
             >
-              <FiArrowLeft className="w-5 h-5" />
-              <span>Back to Events</span>
+              <FiArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">Back to Events</span>
+              <span className="sm:hidden">Back</span>
             </motion.button>
           </MagneticWrapper>
 
@@ -280,7 +281,7 @@ const EventDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-display text-display-xl font-bold mb-6 text-white"
+            className="font-display text-3xl sm:text-4xl md:text-display-xl font-bold mb-4 sm:mb-6 text-white px-4 sm:px-0"
           >
             {event.title}
           </motion.h1>
@@ -290,7 +291,7 @@ const EventDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-cyan mb-4"
+            className="text-base sm:text-lg md:text-xl text-cyan mb-4 px-4 sm:px-0"
           >
             {event.role}
           </motion.p>
@@ -311,7 +312,7 @@ const EventDetail = () => {
       </section>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         {/* Overview */}
         <motion.section
           ref={overviewRef}
@@ -320,8 +321,8 @@ const EventDetail = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <h2 className="font-display text-display-md font-bold text-white mb-6">Overview</h2>
-          <p className="text-lg text-text-secondary leading-relaxed whitespace-pre-line">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-4 sm:mb-6">Overview</h2>
+          <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed whitespace-pre-line">
             {event.longDescription || event.description}
           </p>
         </motion.section>
@@ -381,20 +382,20 @@ const EventDetail = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="font-display text-display-md font-bold text-white mb-8 flex items-center gap-3">
-              <FiTarget className="text-cyan" /> Key Highlights
+            <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+              <FiTarget className="text-cyan w-5 h-5 sm:w-6 sm:h-6" /> Key Highlights
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
               {event.highlights.map((highlight, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   animate={highlightsInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.1 * i }}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-surface/50 border border-white/5"
+                  className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-surface/50 border border-white/5"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan mt-2 shrink-0" />
-                  <span className="text-text-secondary">{highlight}</span>
+                  <span className="text-xs sm:text-sm text-text-secondary">{highlight}</span>
                 </motion.div>
               ))}
             </div>
@@ -409,14 +410,14 @@ const EventDetail = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="font-display text-display-md font-bold text-white mb-8 flex items-center gap-3">
-              <FiCode className="text-cyan" /> Technologies & Focus Areas
+            <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+              <FiCode className="text-cyan w-5 h-5 sm:w-6 sm:h-6" /> Technologies & Focus Areas
             </h2>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {event.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 text-sm font-mono bg-surface rounded-lg text-white border border-white/5"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-mono bg-surface rounded-lg text-white border border-white/5"
                 >
                   {tech}
                 </span>
@@ -433,19 +434,19 @@ const EventDetail = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <div className="p-6 rounded-xl bg-surface/50 border border-white/5">
-              <p className="text-sm text-text-muted mb-2">Project</p>
-              <div className="flex items-center gap-3">
-                <span className="text-white font-medium text-lg">{event.projectName}</span>
+            <div className="p-4 sm:p-6 rounded-xl bg-surface/50 border border-white/5">
+              <p className="text-xs sm:text-sm text-text-muted mb-2">Project</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="text-white font-medium text-sm sm:text-base md:text-lg truncate">{event.projectName}</span>
                 <MagneticWrapper strength={0.2}>
                   <motion.a
                     href={event.projectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cyan hover:text-white transition-colors"
+                    className="text-cyan hover:text-white transition-colors shrink-0 min-h-[44px] flex items-center"
                     whileHover={{ scale: 1.1 }}
                   >
-                    <FiYoutube className="w-6 h-6" />
+                    <FiYoutube className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.a>
                 </MagneticWrapper>
               </div>
@@ -460,7 +461,7 @@ const EventDetail = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-6xl mx-auto mb-20"
         >
-          <h2 className="font-display text-display-md font-bold text-white mb-8">Event Gallery</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-display-md font-bold text-white mb-6 sm:mb-8">Event Gallery</h2>
           <ImageGallery 
             images={event.images || []} 
             title={event.title}

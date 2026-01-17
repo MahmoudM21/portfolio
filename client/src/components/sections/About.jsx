@@ -58,7 +58,7 @@ const About = () => {
         className="absolute top-1/4 -right-32 w-96 h-96 rounded-full bg-gradient-to-br from-cyan/10 to-violet/10 blur-3xl"
       />
 
-      <div ref={ref} className="container mx-auto px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -69,7 +69,7 @@ const About = () => {
           <span className="inline-block font-mono text-cyan text-sm tracking-wider mb-4">
             // ABOUT ME
           </span>
-          <h2 className="font-display text-display-lg font-bold mb-8">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-bold mb-6 sm:mb-8">
             <RevealText text="Engineering the" delay={0.1} />
             <br />
             <span className="gradient-text">
@@ -79,7 +79,7 @@ const About = () => {
         </motion.div>
 
         {/* Main content grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left: Story */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -87,12 +87,12 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <p className="text-xl text-white leading-relaxed font-medium">
+            <p className="text-base sm:text-lg md:text-xl text-white leading-relaxed font-medium">
               I&apos;m Mahmoud Hammad 😎 BMawy 😎 — a Full-Stack Engineer who doesn&apos;t just write code, 
               but architects systems that scale and products that matter.
             </p>
             
-            <p className="text-lg text-text-secondary leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
               My journey started with a simple question: <span className="text-white">&quot;How do 
               the best products work under the hood?&quot;</span> That curiosity led me deep into 
               backend systems, database optimization, and eventually to building complete 
@@ -119,9 +119,9 @@ const About = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="border-l-2 border-cyan pl-6 my-8"
+              className="border-l-2 border-cyan pl-4 sm:pl-6 my-6 sm:my-8"
             >
-              <p className="text-white/90 italic text-lg">
+              <p className="text-white/90 italic text-sm sm:text-base md:text-lg">
                 &quot;I don&apos;t build features. I build foundations that let products evolve.&quot;
               </p>
             </motion.blockquote>
@@ -131,7 +131,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-wrap gap-10 pt-6"
+              className="flex flex-wrap gap-6 sm:gap-8 md:gap-10 pt-4 sm:pt-6"
             >
               {[
                 { value: '20+', label: 'Projects Delivered' },
@@ -139,10 +139,10 @@ const About = () => {
                 { value: '99.9%', label: 'Uptime on Systems Built' },
               ].map((stat, index) => (
                 <div key={index}>
-                  <span className="block font-display text-4xl font-bold gradient-text">
+                  <span className="block font-display text-2xl sm:text-3xl md:text-4xl font-bold gradient-text">
                     {stat.value}
                   </span>
-                  <span className="text-sm text-text-muted">{stat.label}</span>
+                  <span className="text-xs sm:text-sm text-text-muted">{stat.label}</span>
                 </div>
               ))}
             </motion.div>
@@ -151,22 +151,22 @@ const About = () => {
           {/* Right: Highlight cards */}
           <div className="space-y-6">
             {/* Highlight cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {highlights.map((item, index) => (
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className="glass-card p-6 group"
+                  className="glass-card p-4 sm:p-6 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan/20 to-violet/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <item.icon className="w-6 h-6 text-cyan" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-cyan/20 to-violet/20 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-cyan" />
                   </div>
-                  <h3 className="font-display font-semibold text-white mb-2">
+                  <h3 className="font-display font-semibold text-sm sm:text-base text-white mb-1.5 sm:mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-xs sm:text-sm text-text-secondary">
                     {item.description}
                   </p>
                 </motion.div>
@@ -178,15 +178,15 @@ const About = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="glass-card p-5 font-mono text-sm overflow-hidden"
+              className="glass-card p-3 sm:p-4 md:p-5 font-mono text-xs sm:text-sm overflow-hidden"
             >
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                <span className="ml-3 text-text-muted text-xs">mahmoud.config.js</span>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80" />
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80" />
+                <span className="ml-2 sm:ml-3 text-text-muted text-[10px] sm:text-xs">mahmoud.config.js</span>
               </div>
-              <pre className="text-text-secondary overflow-x-auto text-xs leading-relaxed">
+              <pre className="text-text-secondary overflow-x-auto text-[10px] sm:text-xs leading-relaxed">
                 <code>{`const engineer = {
   name: "Mahmoud Hammad",
   role: "Full-Stack Engineer",

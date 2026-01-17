@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer'
 import { useNavigate } from 'react-router-dom'
 import { FiChevronRight } from 'react-icons/fi'
 import api from '../../services/api'
-import MagneticWrapper from '../common/MagneticWrapper'
 
 // Projects data - exact content as provided
 const fallbackProjects = [
@@ -190,7 +189,7 @@ const ProjectCard = ({ project, index }) => {
         }}
       >
           {/* Image */}
-          <div className="relative h-52 overflow-hidden">
+          <div className="relative h-48 sm:h-52 overflow-hidden">
             <img
               src={project.image}
               alt={project.title}
@@ -216,20 +215,20 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
           {/* Content */}
-          <div className="p-6">
-            <h3 className="font-display text-xl font-semibold text-white mb-2 group-hover:text-cyan transition-colors">
+          <div className="p-4 sm:p-6">
+            <h3 className="font-display text-lg sm:text-xl font-semibold text-white mb-2 group-hover:text-cyan transition-colors">
               {project.title}
             </h3>
-            <p className="text-text-secondary text-sm mb-4 line-clamp-2">
+            <p className="text-text-secondary text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
               {project.description}
             </p>
 
             {/* Tech stack */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
               {project.techStack.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
-                  className="px-2 py-1 text-xs font-mono bg-surface-light rounded text-text-muted"
+                  className="px-2 py-0.5 sm:py-1 text-[10px] sm:text-xs font-mono bg-surface-light rounded text-text-muted"
                 >
                   {tech}
                 </span>
@@ -298,7 +297,7 @@ const Projects = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-void via-void-light to-void" />
       <div className="grid-lines opacity-20" />
 
-      <div ref={ref} className="container mx-auto px-6 relative z-10">
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -309,10 +308,10 @@ const Projects = () => {
           <span className="inline-block font-mono text-cyan text-sm tracking-wider mb-4">
             // SELECTED WORK
           </span>
-          <h2 className="font-display text-display-lg font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-display-lg font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto px-4 sm:px-0">
             A collection of projects that showcase my expertise in building 
             scalable, user-centric applications.
           </p>
@@ -323,13 +322,13 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-4 sm:px-0"
         >
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 min-h-[44px] ${
                 activeCategory === category
                   ? 'bg-cyan text-void'
                   : 'bg-surface text-text-secondary hover:text-white hover:bg-surface-light'
@@ -343,7 +342,7 @@ const Projects = () => {
         {/* Projects grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {filteredProjects.map((project, index) => (
             <ProjectCard

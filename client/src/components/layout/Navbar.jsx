@@ -90,7 +90,7 @@ const Navbar = () => {
           }
         `}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
           <MagneticWrapper strength={0.2}>
             <motion.a
@@ -203,7 +203,7 @@ const Navbar = () => {
                 <motion.button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-3xl font-display font-bold text-white hover:text-cyan transition-colors"
+                  className="text-2xl sm:text-3xl font-display font-bold text-white hover:text-cyan transition-colors py-2 px-4 min-h-[44px] flex items-center justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
